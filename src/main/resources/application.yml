@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    url: jdbc:mysql://127.0.0.1:3306/mmall_learning?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 960921
+server:
+  port: 8088
+mybatis:
+  mapper-locations: classpath*:mappers/*Mapper.xml
+  type-aliases-package: tk.mybatis.springboot.model
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
