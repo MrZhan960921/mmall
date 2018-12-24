@@ -24,4 +24,5 @@ public interface IUserService {
 
     ServerResponse<String> forgetResetPassword(String username,String passwordNew,String forgetToken);
 
+    ServerResponse checkAdminRole(User user);
 }
