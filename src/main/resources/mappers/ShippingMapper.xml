@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mmall.dao.ShippingMapper" >
+    <insert id="insert" parameterType="com.mmall.pojo.Shipping" useGeneratedKeys="true" keyProperty="id">
+    insert into mmall_shipping (id, user_id, receiver_name,
+      receiver_phone, receiver_mobile, receiver_province,
+      receiver_city, receiver_district, receiver_address,
+      receiver_zip, create_time, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{receiverName,jdbcType=VARCHAR},
+      #{receiverPhone,jdbcType=VARCHAR}, #{receiverMobile,jdbcType=VARCHAR}, #{receiverProvince,jdbcType=VARCHAR},
+      #{receiverCity,jdbcType=VARCHAR}, #{receiverDistrict,jdbcType=VARCHAR}, #{receiverAddress,jdbcType=VARCHAR},
+      #{receiverZip,jdbcType=VARCHAR}, now(), now()
+      )
+  </insert>
+
+    <delete id="deleteByShippingIdUserId" parameterType="map">
+    DELETE  FROM  mmall_shipping
+    where id = #{shippingId}
+    and user_id = #{userId}
+  </delete>
+
+</mapper>
