@@ -5,7 +5,7 @@ spring:
     username: root
     password: 960921
 server:
-  port: 8088
+  port: 8080
 mybatis:
   mapper-locations: classpath*:mappers/*Mapper.xml
   type-aliases-package: tk.mybatis.springboot.model
@@ -15,3 +15,4 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+

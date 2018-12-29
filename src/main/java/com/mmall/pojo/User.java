@@ -7,7 +7,9 @@ import java.util.Date;
 /**
  * @author 占超群
  * @data 2018/12/23 9:45
+ * lombok尽量在pojo类使用，因为很单纯
  */
+
 @Data
 public class User {
     private Integer id;
