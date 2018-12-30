@@ -36,14 +36,13 @@ public class UserController {
      * 集群测试
      * @return
      */
-
-
-
-
     @RequestMapping(value = "test")
     @ResponseBody
     public String getindex()
     {
+        int i=0;
+        int j=999;
+        int y=j/i;
         return "index1";
     }
     @RequestMapping(value="login",method = RequestMethod.GET)
