@@ -129,22 +129,28 @@ public class RedisShardedPoolUtil {
 
     public static void main(String[] args) {
         ShardedJedis jedis = RedisShardedPool.getJedis();
-
-        RedisPoolUtil.set("keyTest","value");
-
-        String value = RedisPoolUtil.get("keyTest");
-
-        RedisPoolUtil.setEx("keyex","valueex",60*10);
-
-        RedisPoolUtil.expire("keyTest",60*20);
-
-        RedisPoolUtil.del("keyTest");
-
-
-        String aaa = RedisPoolUtil.get(null);
-        System.out.println(aaa);
-
-        System.out.println("end");
+        Long setnxResult = RedisShardedPoolUtil.setnx("1","1");
+        if(setnxResult != null && setnxResult.intValue() == 1){
+            //如果返回值是1，代表设置成功，获取锁
+            System.out.println("插入成功");
+        }else{
+            System.out.println("失败");
+        }
+//        RedisPoolUtil.set("keyTest","value");
+//
+//        String value = RedisPoolUtil.get("keyTest");
+//
+//        RedisPoolUtil.setEx("keyex","valueex",60*10);
+//
+//        RedisPoolUtil.expire("keyTest",60*20);
+//
+//        RedisPoolUtil.del("keyTest");
+//
+//
+//        String aaa = RedisPoolUtil.get(null);
+//        System.out.println(aaa);
+//
+//        System.out.println("end");
 
 
     }
