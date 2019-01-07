@@ -16,6 +16,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Pipeline;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,10 +42,14 @@ public class UserController {
     @ResponseBody
     public String getindex()
     {
+
         int i=0;
         int j=999;
         int y=j/i;
         return "index1";
+
+
+
     }
     @RequestMapping(value="login",method = RequestMethod.GET)
     @ResponseBody

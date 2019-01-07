@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.redisson.api.RLock;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +21,7 @@ import java.util.concurrent.TimeUnit;
  * @data 2018/12/30 15:59
  */
 @Component
+@EnableScheduling//可以在启动类上注解也可以在当前文件
 @Slf4j
 public class CloseOrderTask {
     @Autowired
